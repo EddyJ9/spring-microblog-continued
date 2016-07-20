@@ -59,7 +59,6 @@ public class MicroblogController {
     @RequestMapping(path = "/edit-message", method = RequestMethod.POST)
     public String edit(int id, String text){
         messages.findOne(id);
-        messages.delete(id);
         Message newMessage = new Message(text);
         messages.save(newMessage);
         return "redirect:/";
